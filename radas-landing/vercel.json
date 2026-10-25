@@ -1,0 +1,36 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/pro",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pro/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/p/:slug",
+      "destination": "/api/sales?slug=:slug"
+    },
+    {
+      "source": "/sales-media/:name",
+      "destination": "/api/sales-media?name=:name"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/admin",
+      "destination": "https://radas-buku-forex-crypto.hawaiskandar.chatgpt.site/admin",
+      "permanent": false
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "https://radas-buku-forex-crypto.hawaiskandar.chatgpt.site/admin",
+      "permanent": false
+    }
+  ]
+}
